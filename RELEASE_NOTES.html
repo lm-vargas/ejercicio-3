@@ -1,0 +1,130 @@
+<h1>Release Notes - Kafka - Version 3.1.0</h1>
+<p>Below is a summary of the JIRA issues addressed in the 3.1.0 release of Kafka. For full documentation of the
+    release, a guide to get started, and information about the project, see the <a href="https://kafka.apache.org/">Kafka
+    project site</a>.</p>
+
+    <p><b>Note about upgrades:</b> Please carefully review the
+    <a href="https://kafka.apache.org/31/documentation.html#upgrade">upgrade documentation</a> for this release thoroughly
+    before upgrading your cluster. The upgrade notes discuss any critical information about incompatibilities and breaking
+    changes, performance changes, and any other changes that might impact your production deployment of Kafka.</p>
+
+    <p>The documentation for the most recent release can be found at
+    <a href="https://kafka.apache.org/documentation.html">https://kafka.apache.org/documentation.html</a>.</p>
+<h2>New Feature</h2>
+<ul>
+<li>[<a href="https://issues.apache.org/jira/browse/KAFKA-13202">KAFKA-13202</a>] - KIP-768: Extend SASL/OAUTHBEARER with Support for OIDC</li>
+</ul>
+<h2>Improvement</h2>
+<ul>
+<li>[<a href="https://issues.apache.org/jira/browse/KAFKA-4064">KAFKA-4064</a>] - Add support for infinite endpoints for range queries in Kafka Streams KV stores</li>
+<li>[<a href="https://issues.apache.org/jira/browse/KAFKA-8522">KAFKA-8522</a>] - Tombstones can survive forever</li>
+<li>[<a href="https://issues.apache.org/jira/browse/KAFKA-8613">KAFKA-8613</a>] - Make Grace Period Mandatory for Windowed Operations in Streams</li>
+<li>[<a href="https://issues.apache.org/jira/browse/KAFKA-10712">KAFKA-10712</a>] - Update release scripts to Python3</li>
+<li>[<a href="https://issues.apache.org/jira/browse/KAFKA-10777">KAFKA-10777</a>] - Add additional configuration to control MirrorMaker 2 internal topics naming convention</li>
+<li>[<a href="https://issues.apache.org/jira/browse/KAFKA-10847">KAFKA-10847</a>] - Avoid spurious left/outer join results in stream-stream join </li>
+<li>[<a href="https://issues.apache.org/jira/browse/KAFKA-12486">KAFKA-12486</a>] - Utilize HighAvailabilityTaskAssignor to avoid downtime on corrupted task</li>
+<li>[<a href="https://issues.apache.org/jira/browse/KAFKA-12766">KAFKA-12766</a>] - Consider Disabling WAL-related Options in RocksDB</li>
+<li>[<a href="https://issues.apache.org/jira/browse/KAFKA-12840">KAFKA-12840</a>] - Removing `compact` cleaning on a topic should abort on-going compactions</li>
+<li>[<a href="https://issues.apache.org/jira/browse/KAFKA-12882">KAFKA-12882</a>] - Add ActiveBrokerCount and FencedBrokerCount metrics (KIP-748)</li>
+<li>[<a href="https://issues.apache.org/jira/browse/KAFKA-12887">KAFKA-12887</a>] - Do not trigger user-customized ExceptionalHandler for RTE</li>
+<li>[<a href="https://issues.apache.org/jira/browse/KAFKA-12909">KAFKA-12909</a>] - Allow users to opt-into spurious left/outer stream-stream join improvement</li>
+<li>[<a href="https://issues.apache.org/jira/browse/KAFKA-12963">KAFKA-12963</a>] - Improve error message for Class cast exception</li>
+<li>[<a href="https://issues.apache.org/jira/browse/KAFKA-12994">KAFKA-12994</a>] - Migrate all Tests to New API and Remove Suppression for Deprecation Warnings related to KIP-633</li>
+<li>[<a href="https://issues.apache.org/jira/browse/KAFKA-13071">KAFKA-13071</a>] - Deprecate and remove --authorizer option in kafka-acls.sh</li>
+<li>[<a href="https://issues.apache.org/jira/browse/KAFKA-13075">KAFKA-13075</a>] - Consolidate RocksDBStoreTest and RocksDBKeyValueStoreTest</li>
+<li>[<a href="https://issues.apache.org/jira/browse/KAFKA-13103">KAFKA-13103</a>] - Should group admin handlers consider REBALANCE_IN_PROGRESS and GROUP_AUTHORIZATION_FAILED as retryable errors?</li>
+<li>[<a href="https://issues.apache.org/jira/browse/KAFKA-13111">KAFKA-13111</a>] - Re-evaluate Fetch Sessions when using topic IDs</li>
+<li>[<a href="https://issues.apache.org/jira/browse/KAFKA-13134">KAFKA-13134</a>] - Heartbeat Request high lock contention</li>
+<li>[<a href="https://issues.apache.org/jira/browse/KAFKA-13229">KAFKA-13229</a>] - KIP-761: implement a total blocked time metric in Kafka Streams</li>
+<li>[<a href="https://issues.apache.org/jira/browse/KAFKA-13243">KAFKA-13243</a>] - Differentiate metric latency measured in millis and nanos</li>
+<li>[<a href="https://issues.apache.org/jira/browse/KAFKA-13273">KAFKA-13273</a>] - Add support for Java 17</li>
+<li>[<a href="https://issues.apache.org/jira/browse/KAFKA-13284">KAFKA-13284</a>] - Use sftp protocol in release.py to upload release candidate artifacts </li>
+<li>[<a href="https://issues.apache.org/jira/browse/KAFKA-13301">KAFKA-13301</a>] - The relationship between request.timeout. ms and max.poll.interval.ms in the Consumer Configs is incorrect.</li>
+<li>[<a href="https://issues.apache.org/jira/browse/KAFKA-13319">KAFKA-13319</a>] - Do not send AddOffsetsToTxn/TxnOffsetCommit if offsets map is empty</li>
+<li>[<a href="https://issues.apache.org/jira/browse/KAFKA-13345">KAFKA-13345</a>] - WindowStore should use "delete" policy when duplicates are enabled</li>
+<li>[<a href="https://issues.apache.org/jira/browse/KAFKA-13377">KAFKA-13377</a>] - Fix Resocue leak due to Files.list </li>
+<li>[<a href="https://issues.apache.org/jira/browse/KAFKA-13381">KAFKA-13381</a>] - Wrap all uncaught exceptions as StreamsException with TaskId field</li>
+<li>[<a href="https://issues.apache.org/jira/browse/KAFKA-13439">KAFKA-13439</a>] - Deprecate EAGER rebalancing in Kafka Streams</li>
+<li>[<a href="https://issues.apache.org/jira/browse/KAFKA-13444">KAFKA-13444</a>] - Fix OAuthCompatibilityTool help and add SSL options</li>
+<li>[<a href="https://issues.apache.org/jira/browse/KAFKA-13445">KAFKA-13445</a>] - Add ECDSA test for JWT validation</li>
+</ul>
+<h2>Bug</h2>
+<ul>
+<li>[<a href="https://issues.apache.org/jira/browse/KAFKA-9747">KAFKA-9747</a>] - No tasks created for a connector</li>
+<li>[<a href="https://issues.apache.org/jira/browse/KAFKA-9887">KAFKA-9887</a>] - failed-task-count JMX metric not updated if task fails during startup</li>
+<li>[<a href="https://issues.apache.org/jira/browse/KAFKA-12226">KAFKA-12226</a>] - High-throughput source tasks fail to commit offsets</li>
+<li>[<a href="https://issues.apache.org/jira/browse/KAFKA-12257">KAFKA-12257</a>] -  Consumer mishandles topics deleted and recreated with the same name</li>
+<li>[<a href="https://issues.apache.org/jira/browse/KAFKA-12487">KAFKA-12487</a>] - Sink connectors do not work with the cooperative consumer rebalance protocol</li>
+<li>[<a href="https://issues.apache.org/jira/browse/KAFKA-12762">KAFKA-12762</a>] - Use connection timeout when polling the network for new connections</li>
+<li>[<a href="https://issues.apache.org/jira/browse/KAFKA-13017">KAFKA-13017</a>] - Excessive logging on sink task deserialization errors</li>
+<li>[<a href="https://issues.apache.org/jira/browse/KAFKA-13049">KAFKA-13049</a>] - Log recovery threads use default thread pool naming</li>
+<li>[<a href="https://issues.apache.org/jira/browse/KAFKA-13079">KAFKA-13079</a>] - Forgotten Topics in Fetch Requests may incorrectly use topic IDs</li>
+<li>[<a href="https://issues.apache.org/jira/browse/KAFKA-13102">KAFKA-13102</a>] - Topic IDs not propagated to metadata cache quickly enough for Fetch path</li>
+<li>[<a href="https://issues.apache.org/jira/browse/KAFKA-13122">KAFKA-13122</a>] - resource leak due to not close KeyValueIterator implemented instances</li>
+<li>[<a href="https://issues.apache.org/jira/browse/KAFKA-13126">KAFKA-13126</a>] - Overflow in joinGroupTimeoutMs when max.poll.interval.ms is MAX_VALUE leads to missing rebalances</li>
+<li>[<a href="https://issues.apache.org/jira/browse/KAFKA-13162">KAFKA-13162</a>] - ElectLeader API must be forwarded to Controller</li>
+<li>[<a href="https://issues.apache.org/jira/browse/KAFKA-13168">KAFKA-13168</a>] - KRaft observers should not have a replica id</li>
+<li>[<a href="https://issues.apache.org/jira/browse/KAFKA-13170">KAFKA-13170</a>] - Flaky Test InternalTopicManagerTest.shouldRetryDeleteTopicWhenTopicUnknown</li>
+<li>[<a href="https://issues.apache.org/jira/browse/KAFKA-13175">KAFKA-13175</a>] - The topic is marked for deletion, create topic with the same name throw exception topic already exists.</li>
+<li>[<a href="https://issues.apache.org/jira/browse/KAFKA-13194">KAFKA-13194</a>] - LogCleaner may clean past highwatermark</li>
+<li>[<a href="https://issues.apache.org/jira/browse/KAFKA-13204">KAFKA-13204</a>] - wrong assignor selected if the assignor name is identical</li>
+<li>[<a href="https://issues.apache.org/jira/browse/KAFKA-13210">KAFKA-13210</a>] - fetch/findSessions queries with open endpoints for SessionStore/WindowStore</li>
+<li>[<a href="https://issues.apache.org/jira/browse/KAFKA-13216">KAFKA-13216</a>] - Streams left/outer joins cause new internal changelog topic to grow unbounded</li>
+<li>[<a href="https://issues.apache.org/jira/browse/KAFKA-13225">KAFKA-13225</a>] - Controller skips sending UpdateMetadataRequest when shutting down broker doesnt host partitions </li>
+<li>[<a href="https://issues.apache.org/jira/browse/KAFKA-13231">KAFKA-13231</a>] - `TransactionalMessageCopier.start_node` should wait until the process if fully started</li>
+<li>[<a href="https://issues.apache.org/jira/browse/KAFKA-13256">KAFKA-13256</a>] - Possible NPE in ConfigDef when rendering (enriched) RST or HTML when documentation is not set/NULL</li>
+<li>[<a href="https://issues.apache.org/jira/browse/KAFKA-13261">KAFKA-13261</a>] - KTable to KTable foreign key join loose events when using several partitions</li>
+<li>[<a href="https://issues.apache.org/jira/browse/KAFKA-13264">KAFKA-13264</a>] - backwardFetch in InMemoryWindowStore doesn't return in reverse order</li>
+<li>[<a href="https://issues.apache.org/jira/browse/KAFKA-13294">KAFKA-13294</a>] - Upgrade Netty to 4.1.68 for CVE fixes</li>
+<li>[<a href="https://issues.apache.org/jira/browse/KAFKA-13305">KAFKA-13305</a>] - NullPointerException in LogCleanerManager "uncleanable-bytes" gauge</li>
+<li>[<a href="https://issues.apache.org/jira/browse/KAFKA-13309">KAFKA-13309</a>] - InMemorySessionStore#fetch/backwardFetch doesn't return in correct order</li>
+<li>[<a href="https://issues.apache.org/jira/browse/KAFKA-13315">KAFKA-13315</a>] - log layer exception during shutdown that caused an unclean shutdown</li>
+<li>[<a href="https://issues.apache.org/jira/browse/KAFKA-13370">KAFKA-13370</a>] - Offset commit failure percentage metric is not computed correctly (regression)</li>
+<li>[<a href="https://issues.apache.org/jira/browse/KAFKA-13391">KAFKA-13391</a>] - Failure on Windows due to AccessDeniedAcception when attempting to fsync the parent directory</li>
+<li>[<a href="https://issues.apache.org/jira/browse/KAFKA-13394">KAFKA-13394</a>] - Topic IDs should be removed from PartitionFetchState if they are no longer sent by the controller</li>
+<li>[<a href="https://issues.apache.org/jira/browse/KAFKA-13396">KAFKA-13396</a>] - kafka-topics.sh --create should not require the partitions/replication-factor argument</li>
+<li>[<a href="https://issues.apache.org/jira/browse/KAFKA-13397">KAFKA-13397</a>] - MirrorMaker2 shouldn't mirror Connect's internal topics</li>
+<li>[<a href="https://issues.apache.org/jira/browse/KAFKA-13406">KAFKA-13406</a>] - Cooperative sticky assignor got stuck due to assignment validation failed</li>
+<li>[<a href="https://issues.apache.org/jira/browse/KAFKA-13430">KAFKA-13430</a>] - Remove broker-wide quota properties from the documentation</li>
+<li>[<a href="https://issues.apache.org/jira/browse/KAFKA-13443">KAFKA-13443</a>] - Kafka broker exits when OAuth enabled and certain configuration not specified</li>
+<li>[<a href="https://issues.apache.org/jira/browse/KAFKA-13446">KAFKA-13446</a>] - Remove JWT access token from logs</li>
+<li>[<a href="https://issues.apache.org/jira/browse/KAFKA-13456">KAFKA-13456</a>] - Tighten KRaft config checks/constraints</li>
+<li>[<a href="https://issues.apache.org/jira/browse/KAFKA-13461">KAFKA-13461</a>] - KafkaController stops functioning as active controller after ZooKeeperClient auth failure</li>
+<li>[<a href="https://issues.apache.org/jira/browse/KAFKA-13469">KAFKA-13469</a>] - End-of-life offset commit for source task can take place before all records are flushed</li>
+<li>[<a href="https://issues.apache.org/jira/browse/KAFKA-13472">KAFKA-13472</a>] - Connect can lose track of last committed offsets for topic partitions after partial consumer revocation</li>
+<li>[<a href="https://issues.apache.org/jira/browse/KAFKA-13488">KAFKA-13488</a>] - Producer fails to recover if topic gets deleted (and gets auto-created)</li>
+<li>[<a href="https://issues.apache.org/jira/browse/KAFKA-13490">KAFKA-13490</a>] - Fix some problems with KRaft createTopics and incrementalAlterConfigs</li>
+<li>[<a href="https://issues.apache.org/jira/browse/KAFKA-13512">KAFKA-13512</a>] - topicIdsToNames and topicNamesToIds allocate unnecessary maps</li>
+<li>[<a href="https://issues.apache.org/jira/browse/KAFKA-13544">KAFKA-13544</a>] - Deadlock during shutting down kafka broker because of connectivity problem with zookeeper </li>
+<li>[<a href="https://issues.apache.org/jira/browse/KAFKA-13582">KAFKA-13582</a>] - `TestVerifiableProducer. test_multiple_kraft_security_protocols` consistently fails</li>
+</ul>
+<h2>Task</h2>
+<ul>
+<li>[<a href="https://issues.apache.org/jira/browse/KAFKA-13287">KAFKA-13287</a>] - Upgrade RocksDB to 6.22.1.1</li>
+</ul>
+<h2>Test</h2>
+<ul>
+<li>[<a href="https://issues.apache.org/jira/browse/KAFKA-12935">KAFKA-12935</a>] - Flaky Test RestoreIntegrationTest.shouldRecycleStateFromStandbyTaskPromotedToActiveTaskAndNotRestore</li>
+<li>[<a href="https://issues.apache.org/jira/browse/KAFKA-13046">KAFKA-13046</a>] - Improve the test coverage for stickyAssignor</li>
+</ul>
+<h2>Sub-task</h2>
+<ul>
+<li>[<a href="https://issues.apache.org/jira/browse/KAFKA-9555">KAFKA-9555</a>] - Topic-based implementation for the RemoteLogMetadataManager</li>
+<li>[<a href="https://issues.apache.org/jira/browse/KAFKA-10580">KAFKA-10580</a>] - Add topic ID support to Fetch request</li>
+<li>[<a href="https://issues.apache.org/jira/browse/KAFKA-10774">KAFKA-10774</a>] - Support Describe topic using topic IDs</li>
+<li>[<a href="https://issues.apache.org/jira/browse/KAFKA-12554">KAFKA-12554</a>] - Split Log layer into Log and LocalLog</li>
+<li>[<a href="https://issues.apache.org/jira/browse/KAFKA-12802">KAFKA-12802</a>] - Add a file based cache for consumed remote log metadata for each partition to avoid consuming again incase of broker restarts.</li>
+<li>[<a href="https://issues.apache.org/jira/browse/KAFKA-12988">KAFKA-12988</a>] - Change RLMM add/updateRemoteLogSegmentMetadata and putRemotePartitionDeleteMetadata APIS asynchronous.</li>
+<li>[<a href="https://issues.apache.org/jira/browse/KAFKA-13066">KAFKA-13066</a>] - Replace EasyMock with Mockito for FileStreamSinkConnectorTest</li>
+<li>[<a href="https://issues.apache.org/jira/browse/KAFKA-13068">KAFKA-13068</a>] - Rename Log to UnifiedLog</li>
+<li>[<a href="https://issues.apache.org/jira/browse/KAFKA-13082">KAFKA-13082</a>] - Replace EasyMock with Mockito for ProcessorContextTest</li>
+<li>[<a href="https://issues.apache.org/jira/browse/KAFKA-13088">KAFKA-13088</a>] - Replace EasyMock with Mockito for ForwardingDisabledProcessorContextTest</li>
+<li>[<a href="https://issues.apache.org/jira/browse/KAFKA-13101">KAFKA-13101</a>] - Replace EasyMock and PowerMock with Mockito for RestServerTest</li>
+<li>[<a href="https://issues.apache.org/jira/browse/KAFKA-13123">KAFKA-13123</a>] - Close KeyValueIterator implemented instance in example codes and some tests</li>
+<li>[<a href="https://issues.apache.org/jira/browse/KAFKA-13124">KAFKA-13124</a>] - Close KeyValueIterator implemented instance in internal tests</li>
+<li>[<a href="https://issues.apache.org/jira/browse/KAFKA-13125">KAFKA-13125</a>] - Close KeyValueIterator implemented instance in internal tests (cont.)</li>
+<li>[<a href="https://issues.apache.org/jira/browse/KAFKA-13211">KAFKA-13211</a>] - fetch queries with open endpoints for WindowStore</li>
+<li>[<a href="https://issues.apache.org/jira/browse/KAFKA-13212">KAFKA-13212</a>] - fetch/findSessions queries with open endpoints for SessionStore</li>
+<li>[<a href="https://issues.apache.org/jira/browse/KAFKA-13237">KAFKA-13237</a>] - Add ActiveBrokerCount and FencedBrokerCount metrics to the ZK controller (KIP-748)</li>
+<li>[<a href="https://issues.apache.org/jira/browse/KAFKA-13238">KAFKA-13238</a>] - Add ActiveBrokerCount and FencedBrokerCount metrics to the KRaft controller (KIP-748)</li>
+</ul>
